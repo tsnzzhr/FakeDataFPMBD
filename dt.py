@@ -19,12 +19,7 @@ def dnt():
         elif i / 1000 == 0:
             ag_id = 'D' + str(i)
         
-        if i % 200 != 0:
-            sk_id = i % 200
-        else :
-            sk_id = 200
-        
-        for j in range(1,5000):
+        for j in range(1,3001):
             dt_tgltelaah = fake.date()
             dt_prta1 = fake.sentence()
             dt_prta2 = fake.sentence()
@@ -36,7 +31,7 @@ def dnt():
             dt_prtb2 = fake.sentence()
             dt_rekomklasif = klasifikasi[random.randint(0,2)]    
             dt_catatantelaah = fake.sentence()
-            dt.write(str(n)+','+str(ag_id)+','+str(sk_id)+','+str(j)+','+dt_tgltelaah+','+dt_prta1+','+dt_prta2+','+dt_prta3+','+dt_prta4+','+dt_prta5+','+dt_prta6+','+dt_prtb1+','+dt_prtb2+','+dt_rekomklasif+','+dt_catatantelaah+'\n')
+            dt.write(str(n)+','+str(ag_id)+','+str(j%3001)+','+str(j)+','+dt_tgltelaah+','+dt_prta1+','+dt_prta2+','+dt_prta3+','+dt_prta4+','+dt_prta5+','+dt_prta6+','+dt_prtb1+','+dt_prtb2+','+dt_rekomklasif+','+dt_catatantelaah+'\n')
             n += 1
 
 dnt()
